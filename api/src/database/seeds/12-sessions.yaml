@@ -1,0 +1,23 @@
+table: naxi_sessions
+
+columns:
+  token:
+    type: string
+    length: 64
+    primary: true
+    nullable: false
+  user:
+    type: uuid
+    nullable: false
+    references:
+      table: naxi_users
+      column: id
+  expires:
+    type: timestamp
+    nullable: false
+  ip:
+    type: string
+    length: 255
+  user_agent:
+    type: string
+    length: 255
