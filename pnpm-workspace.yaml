@@ -1,0 +1,8 @@
+packages:
+  - naxi
+  - app
+  - api
+  - docs
+  - sdk
+  - packages/*
+  - tests/*
