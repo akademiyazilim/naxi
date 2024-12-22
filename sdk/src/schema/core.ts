@@ -1,0 +1,45 @@
+import type { naxiActivity } from './activity.js';
+import type { naxiCollection } from './collection.js';
+import type { naxiComment } from './comment.js';
+import type { naxiDashboard } from './dashboard.js';
+import type { naxiExtension } from './extension.js';
+import type { naxiField } from './field.js';
+import type { naxiFile } from './file.js';
+import type { naxiFlow } from './flow.js';
+import type { naxiFolder } from './folder.js';
+import type { naxiNotification } from './notification.js';
+import type { naxiOperation } from './operation.js';
+import type { naxiPanel } from './panel.js';
+import type { naxiPermission } from './permission.js';
+import type { naxiPreset } from './preset.js';
+import type { naxiRelation } from './relation.js';
+import type { naxiRole } from './role.js';
+import type { naxiSettings } from './settings.js';
+import type { naxiShare } from './share.js';
+import type { naxiUser } from './user.js';
+import type { naxiVersion } from './version.js';
+import type { naxiWebhook } from './webhook.js';
+
+export interface CoreSchema<Schema = any> {
+	naxi_activity: naxiActivity<Schema>[];
+	naxi_collections: naxiCollection<Schema>[];
+	naxi_comments: naxiComment<Schema>[];
+	naxi_dashboards: naxiDashboard<Schema>[];
+	naxi_extensions: naxiExtension<Schema>[];
+	naxi_fields: naxiField<Schema>[];
+	naxi_files: naxiFile<Schema>[];
+	naxi_flows: naxiFlow<Schema>[];
+	naxi_folders: naxiFolder<Schema>[];
+	naxi_notifications: naxiNotification<Schema>[];
+	naxi_operations: naxiOperation<Schema>[];
+	naxi_panels: naxiPanel<Schema>[];
+	naxi_permissions: naxiPermission<Schema>[];
+	naxi_presets: naxiPreset<Schema>[];
+	naxi_relations: naxiRelation<Schema>[];
+	naxi_roles: naxiRole<Schema>[];
+	naxi_settings: naxiSettings<Schema>;
+	naxi_shares: naxiShare<Schema>[];
+	naxi_users: naxiUser<Schema>[];
+	naxi_versions: naxiVersion<Schema>[];
+	naxi_webhooks: naxiWebhook<Schema>[];
+}

@@ -1,0 +1,10 @@
+# naxi_migrations isn't surfaced in the app, nor accessible from the API
+table: naxi_migrations
+
+fields:
+  - collection: naxi_migrations
+    field: version
+  - collection: naxi_migrations
+    field: name
+  - collection: naxi_migrations
+    field: timestamp

@@ -1,0 +1,40 @@
+{
+	"name": "create-naxi-extension",
+	"version": "11.0.7",
+	"description": "A small util that will scaffold a naxi extension",
+	"keywords": [
+		"naxi",
+		"extensions"
+	],
+	"homepage": "https://naxi.io",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/naxi/naxi.git",
+		"directory": "packages/create-naxi-extension"
+	},
+	"funding": "https://github.com/naxi/naxi?sponsor=1",
+	"license": "MIT",
+	"author": "Nicola Krumschmidt",
+	"contributors": [
+		"Joonas Palosuo <joonas.palosuo@gmail.com>",
+		"Rijk van Zanten <rijkvanzanten@me.com>"
+	],
+	"type": "module",
+	"exports": {
+		".": "./lib/index.js",
+		"./package.json": "./package.json"
+	},
+	"main": "lib/index.js",
+	"bin": {
+		"cde": "./lib/index.js",
+		"create-naxi-extension": "./lib/index.js"
+	},
+	"files": [
+		"lib/index.js"
+	],
+	"dependencies": {
+		"@naxi/extensions": "workspace:*",
+		"@naxi/extensions-sdk": "workspace:*",
+		"inquirer": "12.0.0"
+	}
+}

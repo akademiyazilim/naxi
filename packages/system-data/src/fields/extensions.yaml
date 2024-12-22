@@ -1,0 +1,21 @@
+table: naxi_extensions
+
+fields:
+  - collection: naxi_extensions
+    field: id
+    special:
+      - uuid
+
+  - collection: naxi_extensions
+    field: folder
+
+  - collection: naxi_extensions
+    field: source
+
+  - collection: naxi_extensions
+    field: bundle
+
+  - collection: naxi_extensions
+    field: enabled
+    special:
+      - cast-boolean

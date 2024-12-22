@@ -1,0 +1,258 @@
+table: naxi_relations
+
+defaults:
+  many_collection: naxi_users
+  many_field: null
+  one_collection: null
+  one_field: null
+  one_allowed_collections: null
+  one_collection_field: null
+  one_deselect_action: 'nullify'
+  junction_field: null
+  sort_field: null
+
+data:
+  ### Collections
+  - many_collection: naxi_collections
+    many_field: group
+    one_collection: naxi_collections
+
+  ### Comments
+  - many_collection: naxi_comments
+    many_field: collection
+    one_collection: naxi_collections
+
+  - many_collection: naxi_comments
+    many_field: user_created
+    one_collection: naxi_users
+
+  - many_collection: naxi_comments
+    many_field: user_updated
+    one_collection: naxi_users
+
+  ### Users
+  - many_collection: naxi_users
+    many_field: role
+    one_collection: naxi_roles
+    one_field: users
+
+  - many_collection: naxi_users
+    many_field: avatar
+    one_collection: naxi_files
+
+  ### Revisions
+  - many_collection: naxi_revisions
+    many_field: activity
+    one_collection: naxi_activity
+    one_field: revisions
+
+  - many_collection: naxi_revisions
+    many_field: parent
+    one_collection: naxi_revisions
+
+  - many_collection: naxi_revisions
+    many_field: version
+    one_collection: naxi_versions
+
+  ### Presets
+  - many_collection: naxi_presets
+    many_field: user
+    one_collection: naxi_users
+
+  - many_collection: naxi_presets
+    many_field: role
+    one_collection: naxi_roles
+
+  ### Folders
+  - many_collection: naxi_folders
+    many_field: parent
+    one_collection: naxi_folders
+
+  ### Files
+  - many_collection: naxi_files
+    many_field: folder
+    one_collection: naxi_folders
+
+  - many_collection: naxi_files
+    many_field: uploaded_by
+    one_collection: naxi_users
+
+  - many_collection: naxi_files
+    many_field: modified_by
+    one_collection: naxi_users
+
+  ### Fields
+  - many_collection: naxi_fields
+    many_field: collection
+    one_collection: naxi_collections
+    one_field: fields
+
+  - many_collection: naxi_fields
+    many_field: group
+    one_collection: naxi_fields
+
+  ### Activity
+  - many_collection: naxi_activity
+    many_field: user
+    one_collection: naxi_users
+
+  ### Settings
+  - many_collection: naxi_settings
+    many_field: project_logo
+    one_collection: naxi_files
+
+  - many_collection: naxi_settings
+    many_field: public_foreground
+    one_collection: naxi_files
+
+  - many_collection: naxi_settings
+    many_field: public_background
+    one_collection: naxi_files
+
+  - many_collection: naxi_settings
+    many_field: public_favicon
+    one_collection: naxi_files
+
+  - many_collection: naxi_settings
+    many_field: storage_default_folder
+    one_collection: naxi_folders
+
+  - many_collection: naxi_settings
+    many_field: public_registration_role
+    one_collection: naxi_roles
+
+  ### Panels
+  - many_collection: naxi_panels
+    many_field: dashboard
+    one_collection: naxi_dashboards
+    one_field: panels
+
+  - many_collection: naxi_panels
+    many_field: user_created
+    one_collection: naxi_users
+
+  ### Flows
+  - many_collection: naxi_flows
+    many_field: operation
+    one_collection: naxi_operations
+
+  - many_collection: naxi_flows
+    many_field: user_created
+    one_collection: naxi_users
+
+  ### Operations
+  - many_collection: naxi_operations
+    many_field: flow
+    one_collection: naxi_flows
+    one_field: operations
+    one_deselect_action: delete
+
+  - many_collection: naxi_operations
+    many_field: resolve
+    one_collection: naxi_operations
+
+  - many_collection: naxi_operations
+    many_field: reject
+    one_collection: naxi_operations
+
+  - many_collection: naxi_operations
+    many_field: user_created
+    one_collection: naxi_users
+
+  ### Sessions
+  - many_collection: naxi_sessions
+    many_field: user
+    one_collection: naxi_users
+
+  - many_collection: naxi_sessions
+    many_field: share
+    one_collection: naxi_shares
+
+  ### Dashboards
+  - many_collection: naxi_dashboards
+    many_field: user_created
+    one_collection: naxi_users
+
+  ### Notifications
+  - many_collection: naxi_notifications
+    many_field: recipient
+    one_collection: naxi_users
+
+  - many_collection: naxi_notifications
+    many_field: sender
+    one_collection: naxi_users
+
+  ### Shares
+  - many_collection: naxi_shares
+    many_field: role
+    one_collection: naxi_roles
+
+  - many_collection: naxi_shares
+    many_field: collection
+    one_collection: naxi_collections
+
+  - many_collection: naxi_shares
+    many_field: user_created
+    one_collection: naxi_users
+
+  ### Versions
+  - many_collection: naxi_versions
+    many_field: collection
+    one_collection: naxi_collections
+
+  - many_collection: naxi_versions
+    many_field: user_created
+    one_collection: naxi_users
+
+  - many_collection: naxi_versions
+    many_field: user_updated
+    one_collection: naxi_users
+
+  ### Permissions
+  - many_collection: naxi_permissions
+    many_field: policy
+    one_collection: naxi_policies
+    one_field: permissions
+    one_deselect_action: delete
+
+  ### Access
+  - many_collection: naxi_access
+    many_field: policy
+    one_collection: naxi_policies
+    one_field: roles
+    one_deselect_action: 'delete'
+    junction_field: role
+
+  - many_collection: naxi_access
+    many_field: policy
+    one_collection: naxi_policies
+    one_field: users
+    one_deselect_action: 'delete'
+    junction_field: user
+
+  - many_collection: naxi_access
+    many_field: role
+    one_collection: naxi_roles
+    one_field: policies
+    one_deselect_action: 'delete'
+    junction_field: policy
+    sort_field: sort
+
+  - many_collection: naxi_access
+    many_field: user
+    one_collection: naxi_users
+    one_field: policies
+    one_deselect_action: 'delete'
+    junction_field: policy
+    sort_field: sort
+
+  ### Roles
+  - many_collection: naxi_roles
+    many_field: parent
+    one_collection: naxi_roles
+    one_field: children
+
+  ### Webhooks
+  - many_collection: naxi_webhooks
+    many_field: migrated_flow
+    one_collection: naxi_flows

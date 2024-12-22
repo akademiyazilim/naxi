@@ -1,0 +1,7 @@
+{
+	"extends": "@naxi/tsconfig/node18-esm",
+	"compilerOptions": {
+		"outDir": "dist"
+	},
+	"include": ["src"]
+}

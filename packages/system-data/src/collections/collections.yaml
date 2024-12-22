@@ -1,0 +1,116 @@
+table: naxi_collections
+
+defaults:
+  collection: null
+  hidden: false
+  singleton: false
+  icon: null
+  note: null
+  translations: null
+  display_template: null
+  accountability: 'all'
+
+data:
+  - collection: naxi_access
+    icon: admin_panel_settings
+    note: $t:naxi_collection.naxi_access
+    display_template: '{{ policy.name }}'
+    sort_field: sort
+
+  - collection: naxi_activity
+    note: $t:naxi_collection.naxi_activity
+    accountability: null
+
+  - collection: naxi_collections
+    icon: database
+    note: $t:naxi_collection.naxi_collections
+
+  - collection: naxi_comments
+    note: $t:naxi_collection.naxi_comments
+
+  - collection: naxi_fields
+    icon: input
+    note: $t:naxi_collection.naxi_fields
+
+  - collection: naxi_files
+    icon: folder
+    note: $t:naxi_collection.naxi_files
+    display_template: '{{ $thumbnail }} {{ title }}'
+
+  - collection: naxi_folders
+    note: $t:naxi_collection.naxi_folders
+    display_template: '{{ name }}'
+
+  - collection: naxi_migrations
+    note: $t:naxi_collection.naxi_migrations
+
+  - collection: naxi_permissions
+    icon: admin_panel_settings
+    note: $t:naxi_collection.naxi_permissions
+
+  - collection: naxi_policies
+    icon: admin_panel_settings
+    note: $t:naxi_collection.naxi_policies
+
+  - collection: naxi_presets
+    icon: bookmark
+    note: $t:naxi_collection.naxi_presets
+    accountability: null
+
+  - collection: naxi_relations
+    icon: merge_type
+    note: $t:naxi_collection.naxi_relations
+
+  - collection: naxi_revisions
+    note: $t:naxi_collection.naxi_revisions
+    accountability: null
+
+  - collection: naxi_roles
+    icon: supervised_user_circle
+    note: $t:naxi_collection.naxi_roles
+
+  - collection: naxi_sessions
+    note: $t:naxi_collection.naxi_sessions
+
+  - collection: naxi_settings
+    singleton: true
+    note: $t:naxi_collection.naxi_settings
+
+  - collection: naxi_users
+    archive_field: status
+    archive_value: archived
+    unarchive_value: draft
+    icon: people_alt
+    note: $t:naxi_collection.naxi_users
+    display_template: '{{ first_name }} {{ last_name }}'
+
+  - collection: naxi_webhooks
+    note: $t:naxi_collection.naxi_webhooks
+
+  - collection: naxi_dashboards
+    note: $t:naxi_collection.naxi_dashboards
+
+  - collection: naxi_panels
+    note: $t:naxi_collection.naxi_panels
+
+  - collection: naxi_notifications
+    note: $t:naxi_collection.naxi_notifications
+
+  - collection: naxi_shares
+    icon: share
+    note: $t:naxi_collection.naxi_shares
+
+  - collection: naxi_flows
+    note: $t:naxi_collection.naxi_flows
+
+  - collection: naxi_operations
+    note: $t:naxi_collection.naxi_operations
+
+  - collection: naxi_translations
+    note: $t:naxi_collection.naxi_translations
+
+  - collection: naxi_versions
+    note: $t:naxi_collection.naxi_versions
+
+  - collection: naxi_extensions
+    note: $t:naxi_collection.naxi_extensions

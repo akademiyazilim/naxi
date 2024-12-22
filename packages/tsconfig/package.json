@@ -1,0 +1,20 @@
+{
+	"name": "@naxi/tsconfig",
+	"version": "2.0.0",
+	"description": "TSConfig files used in naxi projects",
+	"homepage": "https://naxi.io",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/naxi/naxi.git",
+		"directory": "packages/tsconfig"
+	},
+	"funding": "https://github.com/naxi/naxi?sponsor=1",
+	"license": "MIT",
+	"author": "Rijk van Zanten <rijkvanzanten@me.com>",
+	"exports": {
+		"./base": "./base/tsconfig.json",
+		"./node18-cjs": "./node18-cjs/tsconfig.json",
+		"./node18-esm": "./node18-esm/tsconfig.json",
+		"./vue3": "./vue3/tsconfig.json"
+	}
+}
